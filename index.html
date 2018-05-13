@@ -229,6 +229,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tinyperson.github.io/2018/05/12/练手项目03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tinyperson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/12/练手项目03/" itemprop="url">练手项目日记（三）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-12T17:57:16+08:00">
+                2018-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="今天学到的东西："><a href="#今天学到的东西：" class="headerlink" title="今天学到的东西："></a>今天学到的东西：</h5><ol>
+<li><p>mysql用了关键字。</p>
+<p>之前改了一个东西，用到了关键字，所以报错了，大概是这样的：</p>
+<blockquote>
+<p>ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘XXX’ at line 1</p>
+</blockquote>
+<p>这时候有两种办法，一是可以改列名，二是用”`”把词给包起来。</p>
+<p>具体有哪些是关键字或者是保留字，关键字和保留字可以在网上搜到很多。</p>
+</li>
+<li><p>遇到了空指针问题</p>
+<blockquote>
+<p>exception [Request processing failed; nested exception is java.lang.NullPointerException]</p>
+</blockquote>
+<p>一次是因为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+<p>这里没有加上@Autowired来装配</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> UserService userService；</span><br></pre></td></tr></table></figure>
+<p>​</p>
+<p>还有一次是因为这样写了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AA aa = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">aa.setXX(<span class="string">"XX"</span>);</span><br></pre></td></tr></table></figure>
+<p>这样空指针了，应该这样写：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AA aa = <span class="keyword">new</span> AA();</span><br><span class="line"></span><br><span class="line">aa.setXX(<span class="string">"XX"</span>);</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://tinyperson.github.io/2018/05/08/练手项目02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -823,7 +967,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
