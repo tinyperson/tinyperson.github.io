@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="今天学到的几个小东西： textarea标签里输出数据。 因为textarea里的文本都是直接输出的，所以这样： 123&amp;lt;textarea&amp;gt;	$&amp;#123;sth.getSth()&amp;#125;&amp;lt;/textarea&amp;gt; 或者是这样： 12&amp;lt;textarea value=&quot;$&amp;#123;sth.getSth()&amp;#125;&quot;&amp;gt;&amp;lt;/textarea&amp;gt; 肯定是">
+<meta name="description" content="今天学到的东西： mybatis报错了  Parameter ‘0’ not found. Available parameters are [arg1, arg0, param1, param2]  之前是这样写的： 123update tbXX    set AA = #&amp;#123;0&amp;#125;    where II = #&amp;#123;1&amp;#125; 之后就报了上面的错误，后来改成了： 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="练手项目日记（二）">
-<meta property="og:url" content="https://tinyperson.github.io/2018/05/08/练手项目02/index.html">
+<meta property="og:title" content="练手项目日记（四）">
+<meta property="og:url" content="https://tinyperson.github.io/2018/05/14/练手项目04/index.html">
 <meta property="og:site_name" content="记录">
-<meta property="og:description" content="今天学到的几个小东西： textarea标签里输出数据。 因为textarea里的文本都是直接输出的，所以这样： 123&amp;lt;textarea&amp;gt;	$&amp;#123;sth.getSth()&amp;#125;&amp;lt;/textarea&amp;gt; 或者是这样： 12&amp;lt;textarea value=&quot;$&amp;#123;sth.getSth()&amp;#125;&quot;&amp;gt;&amp;lt;/textarea&amp;gt; 肯定是">
+<meta property="og:description" content="今天学到的东西： mybatis报错了  Parameter ‘0’ not found. Available parameters are [arg1, arg0, param1, param2]  之前是这样写的： 123update tbXX    set AA = #&amp;#123;0&amp;#125;    where II = #&amp;#123;1&amp;#125; 之后就报了上面的错误，后来改成了： 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-08T06:05:08.010Z">
+<meta property="og:updated_time" content="2018-05-14T04:04:57.834Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="练手项目日记（二）">
-<meta name="twitter:description" content="今天学到的几个小东西： textarea标签里输出数据。 因为textarea里的文本都是直接输出的，所以这样： 123&amp;lt;textarea&amp;gt;	$&amp;#123;sth.getSth()&amp;#125;&amp;lt;/textarea&amp;gt; 或者是这样： 12&amp;lt;textarea value=&quot;$&amp;#123;sth.getSth()&amp;#125;&quot;&amp;gt;&amp;lt;/textarea&amp;gt; 肯定是">
+<meta name="twitter:title" content="练手项目日记（四）">
+<meta name="twitter:description" content="今天学到的东西： mybatis报错了  Parameter ‘0’ not found. Available parameters are [arg1, arg0, param1, param2]  之前是这样写的： 123update tbXX    set AA = #&amp;#123;0&amp;#125;    where II = #&amp;#123;1&amp;#125; 之后就报了上面的错误，后来改成了： 1">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://tinyperson.github.io/2018/05/08/练手项目02/"/>
+  <link rel="canonical" href="https://tinyperson.github.io/2018/05/14/练手项目04/"/>
 
 
 
 
 
-  <title>练手项目日记（二） | 记录</title>
+  <title>练手项目日记（四） | 记录</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tinyperson.github.io/2018/05/08/练手项目02/">
+    <link itemprop="mainEntityOfPage" href="https://tinyperson.github.io/2018/05/14/练手项目04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tinyperson">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">练手项目日记（二）</h1>
+          <h1 class="post-title" itemprop="name headline">练手项目日记（四）</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T13:30:47+08:00">
-                2018-05-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T11:35:27+08:00">
+                2018-05-14
               </time>
             
 
@@ -299,27 +299,23 @@
       
 
       
-        <h5 id="今天学到的几个小东西："><a href="#今天学到的几个小东西：" class="headerlink" title="今天学到的几个小东西："></a>今天学到的几个小东西：</h5><ol>
-<li><p>textarea标签里输出数据。</p>
-<p>因为textarea里的文本都是直接输出的，所以这样：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span>&gt;</span></span><br><span class="line">	$&#123;sth.getSth()&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>或者是这样：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">value</span>=<span class="string">"$&#123;sth.getSth()&#125;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>肯定是不行的，后来这样做解决了问题：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span>&gt;</span></span><br><span class="line">[[$&#123;sth.getSth()&#125;]]</span><br><span class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h5 id="今天学到的东西："><a href="#今天学到的东西：" class="headerlink" title="今天学到的东西："></a>今天学到的东西：</h5><ol>
+<li><p>mybatis报错了</p>
+<blockquote>
+<p>Parameter ‘0’ not found. Available parameters are [arg1, arg0, param1, param2]</p>
+</blockquote>
+<p>之前是这样写的：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update tbXX</span><br><span class="line">    set AA = #&#123;0&#125;</span><br><span class="line">    where II = #&#123;1&#125;</span><br></pre></td></tr></table></figure>
+<p>之后就报了上面的错误，后来改成了：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update tbXX</span><br><span class="line">    set AA = #&#123;arg0&#125;</span><br><span class="line">    where BB = #&#123;arg1&#125;</span><br></pre></td></tr></table></figure>
+<p>看到网上的原因是新版本不能使用#{0}，要使用 #{arg0}。</p>
 <p>​</p>
 </li>
-<li><p>servlet显示弹窗而不是直接跳转看不到弹窗</p>
-<p>之前的方法里是这样写的：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line"></span><br><span class="line">PrintWriter out = response.getWriter();</span><br><span class="line">out.write(<span class="string">"&lt;script&gt;alert('OK！');&lt;/script&gt;"</span>);</span><br><span class="line">out.close();</span><br><span class="line"></span><br><span class="line">response.sendRedirect(<span class="string">"/anywhere.youwant"</span>);</span><br></pre></td></tr></table></figure>
-<p>这样会弹窗后跳转失败。</p>
-<p>​</p>
-<p>如果这里去掉close:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line"></span><br><span class="line">PrintWriter out = response.getWriter();</span><br><span class="line">out.write(<span class="string">"&lt;script&gt;alert('OK！');&lt;/script&gt;"</span>);</span><br><span class="line"></span><br><span class="line">response.sendRedirect(<span class="string">"/anywhere.youwant"</span>);</span><br></pre></td></tr></table></figure>
-<p>会看不到弹窗而直接跳转。</p>
-<p>​</p>
-<p>后来这样写弹窗成功并跳转成功：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line"></span><br><span class="line">PrintWriter out = response.getWriter();</span><br><span class="line">out.write(<span class="string">"&lt;script&gt;alert('OK！');"</span> +</span><br><span class="line">                  <span class="string">"window.location='/anywhere.youwant' ;"</span> +</span><br><span class="line">                  <span class="string">"window.close()"</span> +</span><br><span class="line">          <span class="string">"&lt;/script&gt;"</span>);</span><br><span class="line"></span><br><span class="line">out.close();</span><br></pre></td></tr></table></figure>
+<li><p>Mapper.xml文件里的注释问题</p>
+<p>​        因为我会在写出有bug的语句时候把他们注释起来，下次看到了以后可以知道之前错在哪里了。这次的问题就处在这里，用了注释的快捷键，是这样注释的：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">"someId"</span>&gt;</span></span><br><span class="line">--	update tbXX</span><br><span class="line">--    	set AA = #&#123;0&#125;</span><br><span class="line">--    	where II = #&#123;1&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">update</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​       结果还是运行了，出错了。这里自动用了sql的注释语句，可能是在mapper.xml里写的原因，所以不可以这样用，所以就搬到标签外面注释了,用了xml的注释语句：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--update tbXX--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--set AA = #&#123;0&#125;--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--where II = #&#123;1&#125;--&gt;</span></span><br></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 </ol>
@@ -347,8 +343,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/25/练手项目01/" rel="next" title="练手项目日记（一）">
-                <i class="fa fa-chevron-left"></i> 练手项目日记（一）
+              <a href="/2018/05/12/练手项目03/" rel="next" title="练手项目日记（三）">
+                <i class="fa fa-chevron-left"></i> 练手项目日记（三）
               </a>
             
           </div>
@@ -356,10 +352,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/12/练手项目03/" rel="prev" title="练手项目日记（三）">
-                练手项目日记（三） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -473,7 +465,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#今天学到的几个小东西："><span class="nav-number">1.</span> <span class="nav-text">今天学到的几个小东西：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#今天学到的东西："><span class="nav-number">1.</span> <span class="nav-text">今天学到的东西：</span></a></li></ol></div>
             
 
           </div>

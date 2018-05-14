@@ -229,6 +229,145 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tinyperson.github.io/2018/05/14/练手项目04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tinyperson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/14/练手项目04/" itemprop="url">练手项目日记（四）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T11:35:27+08:00">
+                2018-05-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="今天学到的东西："><a href="#今天学到的东西：" class="headerlink" title="今天学到的东西："></a>今天学到的东西：</h5><ol>
+<li><p>mybatis报错了</p>
+<blockquote>
+<p>Parameter ‘0’ not found. Available parameters are [arg1, arg0, param1, param2]</p>
+</blockquote>
+<p>之前是这样写的：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update tbXX</span><br><span class="line">    set AA = #&#123;0&#125;</span><br><span class="line">    where II = #&#123;1&#125;</span><br></pre></td></tr></table></figure>
+<p>之后就报了上面的错误，后来改成了：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update tbXX</span><br><span class="line">    set AA = #&#123;arg0&#125;</span><br><span class="line">    where BB = #&#123;arg1&#125;</span><br></pre></td></tr></table></figure>
+<p>看到网上的原因是新版本不能使用#{0}，要使用 #{arg0}。</p>
+<p>​</p>
+</li>
+<li><p>Mapper.xml文件里的注释问题</p>
+<p>​        因为我会在写出有bug的语句时候把他们注释起来，下次看到了以后可以知道之前错在哪里了。这次的问题就处在这里，用了注释的快捷键，是这样注释的：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">"someId"</span>&gt;</span></span><br><span class="line">--	update tbXX</span><br><span class="line">--    	set AA = #&#123;0&#125;</span><br><span class="line">--    	where II = #&#123;1&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">update</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​       结果还是运行了，出错了。这里自动用了sql的注释语句，可能是在mapper.xml里写的原因，所以不可以这样用，所以就搬到标签外面注释了,用了xml的注释语句：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--update tbXX--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--set AA = #&#123;0&#125;--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--where II = #&#123;1&#125;--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://tinyperson.github.io/2018/05/12/练手项目03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -967,7 +1106,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
